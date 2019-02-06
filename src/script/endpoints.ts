@@ -1267,6 +1267,55 @@ const ENDPOINTS = {
     "summary": "A list of loyalty points",
     "version": "v1"
   },
+  "characters_character_send_mail": {
+    "description": "Create and send a new mail",
+    "headers": [
+      {
+        "name": "approved_cost"
+      },
+      {
+        "name": "body"
+      },
+      {
+        "name": "recipients",
+        "sub_headers": [
+          "recipient_id",
+          "recipient_type"
+        ]
+      },
+      {
+        "name": "subject"
+      }
+    ],
+    "method": "POST",
+    "path": "/{version}/characters/{character_id}/mail/",
+    "": [
+      {
+        "description": "The mail to send",
+        "in": "body",
+        "name": "mail",
+        "type": "string",
+        "required": true
+      },
+      {
+        "description": "Name of the character used for auth. If none is given, defaults to MAIN_CHARACTER.",
+        "in": "parameters",
+        "name": "name",
+        "type": "string",
+        "required": false
+      },
+      {
+        "description": "Which ESI version to use for the request. Default: Current ESI latest stable version.",
+        "in": "path",
+        "name": "version",
+        "type": "string",
+        "required": false
+      }
+    ],
+    "scope": "esi-mail.send_mail.v1",
+    "summary": "Mail created",
+    "version": "v1"
+  }
   "characters_character_mail": {
     "description": "Return the 50 most recent mail headers belonging to the character that match the query criteria. Queries can be filtered by label, and last_mail_id can be used to paginate backwards",
     "headers": [
