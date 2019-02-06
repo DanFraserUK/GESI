@@ -1,4 +1,5 @@
 const SCOPES = [
+  "esi-mail.send_mail.v1",
   "esi-alliances.read_contacts.v1",
   "esi-assets.read_assets.v1",
   "esi-assets.read_corporation_assets.v1",
